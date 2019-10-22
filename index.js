@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.options('/upload', cors())
 app.post('/upload', cors(), upload.single('file'), (req, res, next) => {
-  // res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Origin', '*')
   res.send(req.file.filename)
 })
 
